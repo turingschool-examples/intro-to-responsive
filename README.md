@@ -63,9 +63,8 @@ Other media types that can come in handy include ``print``, which adjusts styles
 
 **Break points** are the pixel widths the media queries reference. When the media query is true (i.e. when the screen size matches what is specified by the break point), the styles specified in that media query will be applied.
 
-If you want a much deeper dive into the how's and why's behind media queries, [(]Smashing Magazine](https://www.smashingmagazine.com/2014/07/breakpoints-and-the-future-websites/) has an old, but good, article on the topic.
+If you want a much deeper dive into the how's and why's behind media queries, [Smashing Magazine](https://www.smashingmagazine.com/2014/07/breakpoints-and-the-future-websites/) has an old, but good, article on the topic.
 
-#### Guided Practice (We do)
 #### Putting it into Practice
 
 Let's try this out! We'll build a one-page site made up of layout elements that don't play all that nicely on all screen sizes. We'll have to consider how we want them to look on small, medium, and large screens and add the appropriate media queries and breakpoints so the layout adjusts appropriately.
