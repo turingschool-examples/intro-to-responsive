@@ -1,0 +1,38 @@
+body, html {
+  font-family: sans-serif;
+}
+
+/* primary navigation */
+
+header {
+  background: grey;
+  height: 50px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+nav {
+  padding-top: 15px;
+}
+
+nav:hover {
+  color: white;
+}
+
+/* main content */
+
+.main-content {
+  background-color: aquamarine;
+  float: left;
+  height: 400px;
+  width: 75%;
+}
+
+/* secondary content */
+
+.secondary-content {
+  background-color: cadetblue;
+  float: right;
+  height: 400px;
+  width: 25%;
+}

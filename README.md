@@ -14,13 +14,13 @@ By the end of this lesson, you will:
 
 ### Structure
 
-We can't control how our users interact with our products, but we *can* make sure that our work looks good and functions correctly on all screen sizes.
+We can't control how our users interact with our products, but we *can* make sure that our work looks good and functions correctly on all screen sizes. Your product lives online, it's important to make sure that no matter how a user accesses it they are able to use it successfully and without frustration.
 
 A general understanding of responsive website design and how to use media queries and when to add breakpoints so your page layout resizes nicely is a great skill to have in your toolbelt.
 
 #### Overview
 
-In this session, we'll be diving into responsive page layouts and using media queries to control your page content at all screen sizes.
+In this session, we'll be diving into responsive page layouts and using media queries to control your page content at all screen sizes. This lesson assumes you are familiar with HTML and CSS fundamentals.
 
 #### History of Responsive Layouts
 
@@ -100,23 +100,7 @@ Working in index.html, let's start at the top and work our way down the page. Fo
 </body>
 ```
 
-Next, we'll add an ``article`` tag to hold the main content, and an ``aside`` to hold our secondary content.
-
-```html
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li></li>
-            </ul>
-        </nav>
-    </header>
-    <article></article>
-    <aside></aside>
-</body>
-```
-
-All that's left now is the ``footer``, and we have a basic roadmap of how we want to structure our content.
+Next, we'll add an ``article`` tag to hold the main content, an ``aside`` tag to hold our secondary sidebar content, and the ``footer`` tag. We have a basic roadmap of how we want to structure our content.
 
 ```html
 <body>
@@ -133,14 +117,91 @@ All that's left now is the ``footer``, and we have a basic roadmap of how we wan
 </body>
 ```
 
-Starting our page this way helps us think through our layout which helps us keep our styles clean and organized.
+Now we can easily see, thanks to the semantic tags we're using, what the intented heirarchy of the page is. Building our HTML page in deliberate, small steps helps us think through our layout which will help us keep our styles clean and organized.
 
+Let's add a little bit of clarifying content to these sections. Add a title to your page, fill in the navigation, and include content in your ``article`` and ``aside``. We'll keep this content simple for now so we can focus on getting the HTML elements to behave as we want.
 
+```html
+<!doctype html>
+<html>
+<head>
+    <title>Responsive Site Example</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>A Link Here</li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <h1>Main Content</h1>
+    </article>
+    <aside>
+        <h2>Secondary Content</h2>
+    </aside>
+    <footer>
+        <h3>Footer Content</h3>
+    </footer>
+</body>
+</html>
+```
 
+For the sake of our sanity, let's pull in a reset file for our CSS. Browsers all have default styles they apply to HTML. Since these default styles are not consistant from browser to browser, it's a good idea to wipe out the default styles before you start writing your own. That's exactly what a reset file does: it resets the default styles! While you can write you own, we'll be using (this one)[http://meyerweb.com/eric/tools/css/reset/] from Eric Meyer. Simply copy and paste it into a new file called ``reset.css`` and add it in the ``<head>`` tag of ``index.html``.
 
+Let's start writing our styles. Make a ``styles.css`` and add it to your ``index.html``. Pro-tip: Make sure you add it on the line **below** your ``reset.css``, or the reset file will override all the styles you write.
 
+Let's start at the top and work our way down the page.
 
+```css
+body, html {
+  font-family: sans-serif;
+}
 
+header {
+  background: grey;
+  height: 50px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+nav {
+  padding-top: 15px;
+}
+
+nav:hover {
+  color: white;
+}
+```
+
+Let's talk through what we've done here. First, we make sans-serif the default font family to be used through out the site. Sans-serif is generally easier to read on screens, but feel free to use a different font family.
+
+For the header tag, we've done the following things:
+- set the background color to gray
+- set the height to 50px
+- added a 25px margin to the bottom so the contents of our page don't crowd our nav bar
+- centered all the content.
+
+Since our ``header`` tag wraps our ``nav`` tag, we don't have to write as many styles here. We've added top padding to vertically center the link, and added a ``:hover`` suedo element that changes the text color to white so our users can tell when they move their cursor over it that it's clickable. And with that, our header navigation is good to go!
+
+On to our body content!
+
+```html
+.main-content {
+  background-color: aquamarine;
+  float: left;
+  height: 400px;
+  width: 75%;
+}
+
+.secondary-content {
+  background-color: cadetblue;
+  float: right;
+  height: 400px;
+  width: 25%;
+}
+```
 
 
 ### Slides
