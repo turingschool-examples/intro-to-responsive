@@ -119,7 +119,9 @@ Next, we'll add an ``article`` tag to hold the main content, an ``aside`` tag to
 
 Now we can easily see, thanks to the semantic tags we're using, what the intented heirarchy of the page is. Building our HTML page in deliberate, small steps helps us think through our layout which will help us keep our styles clean and organized.
 
-Let's add a little bit of clarifying content to these sections. Add a title to your page, fill in the navigation, and include content in your ``article`` and ``aside``. We'll keep this content simple for now so we can focus on getting the HTML elements to behave as we want.
+Let's add a little bit of clarifying content to these sections. Add a title to your page, fill in the navigation, and include content in your ``article`` and ``aside``. Let's also wrap our articlce and aside in a ``section`` with a class of ``.container``. This will let us control where those elements go as a unit.
+
+We'll keep this content simple for now so we can focus on getting the HTML elements to behave as we want.
 
 ```html
 <!doctype html>
@@ -135,12 +137,14 @@ Let's add a little bit of clarifying content to these sections. Add a title to y
             </ul>
         </nav>
     </header>
-    <article>
-        <h1>Main Content</h1>
-    </article>
-    <aside>
-        <h2>Secondary Content</h2>
-    </aside>
+    <section class="container">
+        <article>
+            <h1>Main Content</h1>
+        </article>
+        <aside>
+            <h2>Secondary Content</h2>
+        </aside>
+    </section>
     <footer>
         <h3>Footer Content</h3>
     </footer>
@@ -188,6 +192,11 @@ Since our ``header`` tag wraps our ``nav`` tag, we don't have to write as many s
 On to our body content!
 
 ```html
+.container {
+  height: 400px;
+  margin: 0 auto;
+}
+
 .main-content {
   background-color: aquamarine;
   float: left;
@@ -203,19 +212,22 @@ On to our body content!
 }
 ```
 
+This is fairly straightforward, but let's walk through it.
 
-### Slides
+For our wrapping ``.container``, we set the height to match the heights set on ``.main-content`` and ``.secondary-content``. That's all we'll need to do with it at this point!
 
-* [Link to optional slides]()
+We've set different background colors on both the main content and secondary content to help us clearly see how they're behaving as we adjust our screen size.
 
-### Video
+We set ``float: left`` on the primary content and ``float: right`` on the secondary content to make them sit next to each other rather than stacked on top of eachother, and we gave them widths of 75% and 25%, respectively, so together they fill the whole screen band have clear heirarchy and importance.
 
-* [Link to optional video]()
+Now all that's left is out footer! We'll give it the same treatment as the header, but instead of ``margin-bottom``, we use ``margin-top``.
 
-### Repository
-
-* [Link to optional repo]()
-
-### Outside Resources / Further Reading
-
-* [Link to first outside resource]()
+```html
+footer {
+  background: grey;
+  height: 50px;
+  margin-top: 25px;
+  text-align: center;
+}
+```
+Boom! We have a simple site! Now, try making your browser window big and then make it small. It doesn't look awesome on small and large screens, does it? That's because we've made a liquid page layout, which is a great start but needs a little fine tuning to become responsive. That means it's time for media queries!

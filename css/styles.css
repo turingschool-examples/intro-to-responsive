@@ -19,7 +19,11 @@ nav:hover {
   color: white;
 }
 
-/* main content */
+/* body content */
+
+.container {
+  height: 400px;
+}
 
 .main-content {
   background-color: aquamarine;
@@ -28,11 +32,18 @@ nav:hover {
   width: 75%;
 }
 
-/* secondary content */
-
 .secondary-content {
   background-color: cadetblue;
   float: right;
   height: 400px;
   width: 25%;
+}
+
+/* footer */
+
+footer {
+  background: grey;
+  height: 50px;
+  margin-top: 25px;
+  text-align: center;
 }
