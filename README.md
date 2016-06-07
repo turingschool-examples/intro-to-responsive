@@ -138,10 +138,10 @@ We'll keep this content simple for now so we can focus on getting the HTML eleme
         </nav>
     </header>
     <section class="container">
-        <article>
+        <article class="main-content">
             <h1>Main Content</h1>
         </article>
-        <aside>
+        <aside class="secondary-content">
             <h2>Secondary Content</h2>
         </aside>
     </section>
