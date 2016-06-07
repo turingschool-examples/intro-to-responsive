@@ -48,7 +48,7 @@ The primary drawback to this strategy is that screen widths that fall between th
 ###### Responsive Page Layout
 At first glance, a response site looks a lot like an adaptive site. But start resizing your screen, and you'll see why it's the best solution. A true responsive page layout combines the best parts of a liquid layout and an adaptive layout to create the best experience for your users as they move between devices and screen sizes. By using both relative units and media queries, a responsive site allows us to transition through screen sizes seamlessly and effortlessly.
 
-The site (Liquidapsive)[http://www.liquidapsive.com/] is a great resource showing simple examples of these layout types in action.
+The site [Liquidapsive](http://www.liquidapsive.com/) is a great resource showing simple examples of these layout types in action.
 
 
 #### Using Media Queries
@@ -57,13 +57,13 @@ We know we want to build a site that works well on a variety of screen sizes, bu
 
 **Media queries** are a Boolean chunk of logic that lives in your CSS, and when you write a series of media queries you are creating a very basic algorithm. They control at what screen size specific styles will be applied.
 
-The W3C recognizes (several different media types)[https://www.w3.org/TR/CSS2/media.html#media-types], but for our purposes we'll primiarly use ``screen``. This indicates that the media query is intended for computer screens.
+The W3C recognizes [several different media types](https://www.w3.org/TR/CSS2/media.html#media-types), but for our purposes we'll primiarly use ``screen``. This indicates that the media query is intended for computer screens.
 
 Other media types that can come in handy include ``print``, which adjusts styles for screened documents that are being printed, and ``handheld``, which is indended for handheld devices. There are also media types that focus on accessiblity by providing tactile braille feedback or working with speech synthesizers.
 
 **Break points** are the pixel widths the media queries reference. When the media query is true (i.e. when the screen size matches what is specified by the break point), the styles specified in that media query will be applied.
 
-If you want a much deeper dive into the how's and why's behind media queries, (Smashing Magazine)[https://www.smashingmagazine.com/2014/07/breakpoints-and-the-future-websites/] has an old, but good, article on the topic.
+If you want a much deeper dive into the how's and why's behind media queries, [(]Smashing Magazine](https://www.smashingmagazine.com/2014/07/breakpoints-and-the-future-websites/) has an old, but good, article on the topic.
 
 #### Guided Practice (We do)
 #### Putting it into Practice
