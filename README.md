@@ -68,7 +68,79 @@ If you want a much deeper dive into the how's and why's behind media queries, (S
 #### Guided Practice (We do)
 #### Putting it into Practice
 
-Let's try this out! We'll build a one-page site made up of layout elements that won't play nicely on all screen sizes, so we'll have to consider how we want the 
+Let's try this out! We'll build a one-page site made up of layout elements that don't play all that nicely on all screen sizes. We'll have to consider how we want them to look on small, medium, and large screens and add the appropriate media queries and breakpoints so the layout adjusts appropriately.
+
+To get started, we'll set up our HTML skeleton so we have a roadmap of where we're heading with the page before we start adding styles.
+
+```html
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+Now that we have our basic HTML page structure written, we can think about how we want to structure the cotents. We know we want to have nav main content, some secondary content in a sidebar on the right side of the screen, and a footer so we'll go ahead and add the appropriate tags for those chunks of content.
+
+Working in index.html, let's start at the top and work our way down the page. For our primary navigation, we'll use the semantic ``header`` tag to wrap a ``nav`` tag that contains the unordered list that will become our navigation links.
+
+```html
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+```
+
+Next, we'll add an ``article`` tag to hold the main content, and an ``aside`` to hold our secondary content.
+
+```html
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+    <article></article>
+    <aside></aside>
+</body>
+```
+
+All that's left now is the ``footer``, and we have a basic roadmap of how we want to structure our content.
+
+```html
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+    <article></article>
+    <aside></aside>
+    <footer></footer>
+</body>
+```
+
+Starting our page this way helps us think through our layout which helps us keep our styles clean and organized.
+
+
+
+
+
+
+
 
 
 ### Slides
