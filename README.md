@@ -31,22 +31,22 @@ In a nutshell, this approach uses relative units to set the width and size of th
 
 There are four primary page layout types:
 
-###### Static Page Layout
+**Static Page Layout**
 A static layout is fixed width and sits in the center of the screen -- it is the traditional web layout. It works on one screen size and one screen size only. It will fail on screens any amount smaller or larger than the original design.
 
-###### Liquid Page Layout
+**Liquid Page Layout**
 A liquid (also called 'fluid') page layout uses relative units instead of fixed units (think percentages instead of pixels).
 
 Liquid layouts fill the whole page, regardless of the screen or browser width. It's an approach that doesn't take as much thought and planning as other techniques, making it quick and easy to implement. However, this ease of implementation comes with major disadvantages. These layouts fail at screen sizes significantly larger or smaller than the original design.
 
-###### Adaptive Page Layout
+**Adaptive Page Layout**
 An adaptive layout uses CSS media queries to detect the width of the browser and make layout adjustments accordingly. Unlike liquid layouts, adaptive layouts use fixed units like pixels to define widths. They behave like a series of static layouts defined by specific media queries.
 
 Because adaptive layouts typically take less time to build than true responsive layouts, they are a great option for quickly updating an existing static layout to make it compatiable with mobile devices.
 
 The primary drawback to this strategy is that screen widths that fall between the set breakpoints can feel awkward, with contents looking either too crowded or with far too much space.
 
-###### Responsive Page Layout
+**Responsive Page Layout**
 At first glance, a response site looks a lot like an adaptive site. But start resizing your screen, and you'll see why it's the best solution. A true responsive page layout combines the best parts of a liquid layout and an adaptive layout to create the best experience for your users as they move between devices and screen sizes. By using both relative units and media queries, a responsive site allows us to transition through screen sizes seamlessly and effortlessly.
 
 The site [Liquidapsive](http://www.liquidapsive.com/) is a great resource showing simple examples of these layout types in action.
@@ -86,7 +86,7 @@ To get started, we'll set up our HTML skeleton so we have a roadmap of where we'
 
 Now that we have our basic HTML page structure written, we can think about how we want to structure the cotents. We know we want to have nav main content, some secondary content in a sidebar on the right side of the screen, and a footer so we'll go ahead and add the appropriate tags for those chunks of content.
 
-Working in index.html, let's start at the top and work our way down the page. For our primary navigation, we'll use the semantic ``header`` tag to wrap a ``nav`` tag that contains the unordered list that will become our navigation links.
+Working in ``index.html``, let's start at the top and work our way down the page. For our primary navigation, we'll use the semantic ``header`` tag to wrap a ``nav`` tag that contains the unordered list that will become our navigation links.
 
 ```html
 <body>
@@ -187,7 +187,7 @@ For the header tag, we've done the following things:
 - added a 25px margin to the bottom so the contents of our page don't crowd our nav bar
 - centered all the content.
 
-Since our ``header`` tag wraps our ``nav`` tag, we don't have to write as many styles here. We've added top padding to vertically center the link, and added a ``:hover`` suedo element that changes the text color to white so our users can tell when they move their cursor over it that it's clickable. And with that, our header navigation is good to go!
+Since our ``header`` tag wraps our ``nav`` tag, we don't have to write as many styles here. We've added top padding to vertically center the link, and added a ``:hover`` psuedo element that changes the text color to white so our users can tell when they move their cursor over it that it's clickable. And with that, our header navigation is good to go!
 
 On to our body content!
 
@@ -218,9 +218,9 @@ For our wrapping ``.container``, we set the height to match the heights set on `
 
 We've set different background colors on both the main content and secondary content to help us clearly see how they're behaving as we adjust our screen size.
 
-We set ``float: left`` on the primary content and ``float: right`` on the secondary content to make them sit next to each other rather than stacked on top of eachother, and we gave them widths of 75% and 25%, respectively, so together they fill the whole screen band have clear heirarchy and importance.
+We set ``float: left`` on the primary content and ``float: right`` on the secondary content to make them sit next to each other rather than stacked on top of each other, and we gave them widths of 75% and 25%, respectively, so together they fill the whole screen and have clear heirarchy of importance.
 
-Now all that's left is out footer! We'll give it the same treatment as the header, but instead of ``margin-bottom``, we use ``margin-top``.
+Now all that's left is out footer. We'll give it the same treatment as the header, but instead of ``margin-bottom``, we use ``margin-top``.
 
 ```css
 footer {
@@ -230,7 +230,7 @@ footer {
   text-align: center;
 }
 ```
-Boom! We have a simple site! Now, try making your browser window big and then make it small. It doesn't look awesome on small and large screens, does it? That's because we've made a liquid page layout, which is a great starting point but needs a little fine tuning to become responsive. That means it's time for media queries!
+Boom! We have a simple site! Now, try making your browser window big and then make it small. This layout doesn't look awesome on small and large screens, does it? That's because we've made a liquid page layout, which is a great starting point but needs a little fine tuning to become responsive. That means it's time for media queries!
 
 If we open our developer tools, we'll be able to see the pixel width of the screen as we change the width. Let's figure out at what point it starts to look bad at large and small sizes.
 
@@ -265,7 +265,7 @@ Once we've established that our query is working, we can update the styles we wa
 }
 ```
 
-Now let's dig into our media query for smaller screens. We can see that our aside is just way too narrow to be ledgible on small screens, and it's also crowding out main content. So what do we do? Let's think about the problems we want to solve -- everything is getting too crowded and we're going to end up with a crummy experience for users because it will be hard to read and interact with. A straightforward solution is to simply drop the ``secondary-content`` down below the ``main-content`` on screens below 550px. That will allow us to maximize the screen width we have available, and still maintain the heirarchy of content we've established with our current layout.
+Now let's dig into our media query for smaller screens. We can see that our aside is way too narrow to be ledgible on small screens, and it's also crowding out main content. So what do we do? Let's think about the problems we want to solve: everything is getting too crowded and we're going to end up with a crummy experience for users because it will be hard to read and interact with. A straightforward solution is to simply drop the ``secondary-content`` down below the ``main-content`` on screens below 550px. That will allow us to maximize the screen width we have available, and still maintain the heirarchy of content we've established with our current layout.
 
 ```css
 @media screen and (max-width: 550px) {
