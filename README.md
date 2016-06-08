@@ -291,3 +291,7 @@ Now let's dig into our media query for smaller screens. We can see that our asid
 Let's talk through what we changed here. The primary adjustment is that we've removed the floats from ``main-content`` and ``secondary-content`` and set the widths of both to 100%. Since floats take elements out of the normal page flow, on larger screens we needed to have the ``.container`` element's height set to the same pixel height of our content. Now that we've removed the floats on small screens, we can set the height of the ``.container``  element to 100% since our content is back in the normal back flow as block-level elements.
 
 Congratulations! You've built a responsive site!
+
+##### Your Turn!
+
+Now that you have a handle on media queries and  breakpoints, take a look at the ``unicorn.html`` and ``unicorn-styles.css`` files in this repo. Even though it's build using the basic responsive site we just made as a template, this site is definitely not responsive! We need to make sure our users have access to all this highly critical unicorn information! Consider how you can approach structuring this layout on medium and small screens, and, using media queries, see if you can make the page contents work nicely as you resize the screen.
