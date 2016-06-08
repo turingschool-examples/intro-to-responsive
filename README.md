@@ -10,7 +10,8 @@ By the end of this lesson, you will:
 
 * have an understanding of the history of responsive web design
 * be familiar with the various types of media queries and page layouts and how to use them
-* have the skills and understanding to implement media queries and add breakpoints effectively and as needed and feel confident that you understand how to control how your site looks on every screen size.
+* have the skills and understanding to implement media queries and add breakpoints effectively and as needed
+* Feel confident that you understand how to control how your site looks on every screen size.
 
 ### Structure
 
