@@ -47,3 +47,12 @@ footer {
   margin-top: 25px;
   text-align: center;
 }
+
+/* media queries */
+
+@media screen and (min-width: 900px) {
+  .container {
+    margin: 0 auto;
+    width: 90%;
+  }
+}

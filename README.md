@@ -151,7 +151,7 @@ We'll keep this content simple for now so we can focus on getting the HTML eleme
 </html>
 ```
 
-For the sake of our sanity, let's pull in a reset file for our CSS. Browsers all have default styles they apply to HTML. Since these default styles are not consistant from browser to browser, it's a good idea to wipe out the default styles before you start writing your own. That's exactly what a reset file does: it resets the default styles! While you can write you own, we'll be using (this one)[http://meyerweb.com/eric/tools/css/reset/] from Eric Meyer. Simply copy and paste it into a new file called ``reset.css`` and add it in the ``<head>`` tag of ``index.html``.
+For the sake of our sanity, let's pull in a reset file for our CSS. Browsers all have default styles they apply to HTML. Since these default styles are not consistant from browser to browser, it's a good idea to wipe out the default styles before you start writing your own. That's exactly what a reset file does: it resets the default styles! While you can write you own, we'll be using [this one](http://meyerweb.com/eric/tools/css/reset/) from Eric Meyer. Simply copy and paste it into a new file called ``reset.css`` and add it in the ``<head>`` tag of ``index.html``.
 
 Let's start writing our styles. Make a ``styles.css`` and add it to your ``index.html``. Pro-tip: Make sure you add it on the line **below** your ``reset.css``, or the reset file will override all the styles you write.
 
@@ -190,7 +190,7 @@ Since our ``header`` tag wraps our ``nav`` tag, we don't have to write as many s
 
 On to our body content!
 
-```html
+```css
 .container {
   height: 400px;
   margin: 0 auto;
@@ -221,7 +221,7 @@ We set ``float: left`` on the primary content and ``float: right`` on the second
 
 Now all that's left is out footer! We'll give it the same treatment as the header, but instead of ``margin-bottom``, we use ``margin-top``.
 
-```html
+```css
 footer {
   background: grey;
   height: 50px;
@@ -229,4 +229,38 @@ footer {
   text-align: center;
 }
 ```
-Boom! We have a simple site! Now, try making your browser window big and then make it small. It doesn't look awesome on small and large screens, does it? That's because we've made a liquid page layout, which is a great start but needs a little fine tuning to become responsive. That means it's time for media queries!
+Boom! We have a simple site! Now, try making your browser window big and then make it small. It doesn't look awesome on small and large screens, does it? That's because we've made a liquid page layout, which is a great starting point but needs a little fine tuning to become responsive. That means it's time for media queries!
+
+If we open our developer tools, we'll be able to see the pixel width of the screen as we change the width. Let's figure out at what point it starts to look bad at large and small sizes.
+
+Our site looks pretty good at medium screen sizes, but the ``main-content`` and ``secondary-content`` sections start looking too wide beyond 900px. On smaller screens, our ``secondary-content `` starts looking a too crowded below 550px. Great! We'll use 900px as our breakpoint for larger screens and 550px as our breakpoint for smaller screens. This is a very simple site, so those should be sufficient for now.
+
+Now, you may be thinking that this seems like a pretty unprecise way to identify your breakpoints. The fact is that we are at the mercy of our content and we must make breakpoint decisions based on what works best for each specific project rather than the screen sizes and resolutions of a particular device. There are so many devices and so many ways to view a website that it's safer to make sure your site just works right at any size. If you want to take a look at a list of device-specific media queries (which can be helpful to get an idea of what you're up against or if you're wrangling a specific issue), CSS-Tricks has a [great post](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) for you.
+
+Before we write any queries, let's add a viewport meta tag in the ``head`` of our ``index.html``. This will make sure that our site works on devices. It can be a frustrating surprise to find that your responsive site works on your computer, and in device simulators, only to try it out on your phone and find out it looks terrible. The viewport meta tag gives the browser instructions on how to control the pages dimensions and sets the width of the page based on the screen width of the device it is being viewed on. Magic! If you want to learn more, Mozilla has an [article](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag) that's full of good information.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=true;">
+```
+
+Let's start with our media query for large screens. We know we want our breakpoint to be 900px. Let's add a loud background color to our ``body`` just to make sure it's hooked up.
+
+```css
+@media screen and (mix-width: 900px) {
+    body {
+        background: yellow;
+    }
+}
+```
+
+Once we've established that our query is working, we can update the styles we want to change on larger screens. We have a pretty simple layout, so let's just set set a width on the ``.container`` that wraps our page's body content. This will give the content a little breathing room around the left and right edges of the screen since we don't need all that space on big screens.
+
+```css
+@media screen and (max-width: 900px) {
+    .container {
+        margin: 0 auto;
+        width: 90%;
+    }
+}
+```
+
