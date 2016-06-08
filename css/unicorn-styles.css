@@ -1,0 +1,149 @@
+/* color pallete: https://color.adobe.com/For-animation-color-theme-8144301/ */
+
+
+/* fonts */
+
+html, body {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+  color: #2C858D;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 300%;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 275%;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 250%;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 225%;
+  margin-bottom: 15px;
+}
+
+h5 {
+  font-size: 200%;
+  margin-bottom: 15px;
+}
+
+h6 {
+  font-size: 175%;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 150%;
+  line-height: 140%;
+  color: #74CEB7;
+  margin-bottom: 10px;
+}
+
+/* primary nav */
+
+header {
+  background: #FF2B65;
+  border-bottom: 3px solid #B3184A;
+  height: 75px;
+}
+
+header h1 {
+  background: url(../images/angry-unicorn.jpg) no-repeat;
+  background-size: cover;
+  border: 3px solid #B3184A;
+  border-radius: 50%;
+  height: 50px;
+  float: left;
+  margin-top: 12px;
+  text-indent: -99999px;
+  width: 50px;
+}
+
+nav {
+  float: right;
+}
+
+nav li {
+  display: inline-block;
+  margin: 15px 10px 0;
+}
+
+nav a {
+  color: white;
+  font-size: 110%;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  border-bottom: 4px solid #B3184A;
+}
+
+/* body content */
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container,
+.main-content,
+.secondary-content {
+  height: 500px;
+}
+
+.main-content,
+.secondary-content {
+  background: none;
+}
+
+.main-content p {
+  display: inline-block;
+  width: 50%;
+}
+
+.secondary-content {
+  border-left: 2px solid #FFDCEB;
+  width: 24%;
+}
+
+.hero-img {
+  width: 45%;
+  border-radius: 10px;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.aside-img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* footer */
+footer {
+  background: #B3184A;
+  height: 150px;
+}
+
+.three-column {
+  border: 2px solid #FF2B65;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  height: 100px;
+  margin: 12px;
+  width: 30%;
+}

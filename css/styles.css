@@ -15,7 +15,12 @@ nav {
   padding-top: 15px;
 }
 
-nav:hover {
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+nav a:hover {
   color: white;
 }
 
