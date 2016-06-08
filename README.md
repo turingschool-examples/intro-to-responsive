@@ -246,7 +246,7 @@ Before we write any queries, let's add a viewport meta tag in the ``head`` of ou
 Let's start with our media query for large screens. We know we want our breakpoint to be 900px. Let's add a loud background color to our ``body`` just to make sure it's hooked up.
 
 ```css
-@media screen and (mix-width: 900px) {
+@media screen and (min-width: 900px) {
     body {
         background: yellow;
     }
@@ -256,7 +256,7 @@ Let's start with our media query for large screens. We know we want our breakpoi
 Once we've established that our query is working, we can update the styles we want to change on larger screens. We have a pretty simple layout, so let's just set set a width on the ``.container`` that wraps our page's body content. This will give the content a little breathing room around the left and right edges of the screen since we don't need all that space on big screens.
 
 ```css
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 900px) {
     .container {
         margin: 0 auto;
         width: 90%;
@@ -264,3 +264,29 @@ Once we've established that our query is working, we can update the styles we wa
 }
 ```
 
+Now let's dig into our media query for smaller screens. We can see that our aside is just way too narrow to be ledgible on small screens, and it's also crowding out main content. So what do we do? Let's think about the problems we want to solve -- everything is getting too crowded and we're going to end up with a crummy experience for users because it will be hard to read and interact with. A straightforward solution is to simply drop the ``secondary-content`` down below the ``main-content`` on screens below 550px. That will allow us to maximize the screen width we have available, and still maintain the heirarchy of content we've established with our current layout.
+
+```css
+@media screen and (max-width: 550px) {
+  .container {
+    height: 100%;
+  }
+
+  .main-content {
+    background-color: aquamarine;
+    float: none;
+    height: 400px;
+    width: 100%;
+  }
+
+  .secondary-content {
+    background-color: cadetblue;
+    float: none;
+    height: 200px;
+    width: 100%;
+  }
+}
+```
+Let's talk through what we changed here. The primary adjustment is that we've removed the floats from ``main-content`` and ``secondary-content`` and set the widths of both to 100%. Since floats take elements out of the normal page flow, on larger screens we needed to have the ``.container`` element's height set to the same pixel height of our content. Now that we've removed the floats on small screens, we can set the height of the ``.container``  element to 100% since our content is back in the normal back flow as block-level elements.
+
+Congratulations! You've built a responsive site!
