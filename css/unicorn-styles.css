@@ -55,6 +55,8 @@ header {
   background: #FF2B65;
   border-bottom: 3px solid #B3184A;
   height: 75px;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 header h1 {
@@ -71,6 +73,7 @@ header h1 {
 
 nav {
   float: right;
+  padding-top: 15px;
 }
 
 nav li {
@@ -99,6 +102,18 @@ nav li a:hover {
 .main-content,
 .secondary-content {
   height: 500px;
+}
+
+.main-content {
+  display: inline-block;
+  vertical-align: top;
+  width: 75%;
+}
+
+.secondary-content {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
 }
 
 /* main content */
