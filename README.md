@@ -274,14 +274,12 @@ Now let's dig into our media query for smaller screens. We can see that our asid
   }
 
   .main-content {
-    background-color: aquamarine;
     float: none;
     height: 400px;
     width: 100%;
   }
 
   .secondary-content {
-    background-color: cadetblue;
     float: none;
     height: 200px;
     width: 100%;
